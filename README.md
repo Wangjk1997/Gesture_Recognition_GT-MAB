@@ -1,1 +1,1 @@
-# Gesture_Recognization_GT-MAB
+# Gesture_Recognition_GT-MAB
