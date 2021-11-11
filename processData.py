@@ -20,6 +20,7 @@ def cpdata(origin, destination):
             shutil.copy2(full_path, destination)
     
 def mkcsv(origin, label, csv_name):
+<<<<<<< HEAD
     with open(csv_name, 'a', newline='') as csvfile:
         g = os.walk(origin)
         writer = csv.writer(csvfile)
@@ -52,3 +53,21 @@ if __name__ == "__main__":
     mkcsv(origin0_testing, '0', csv_testing)
     mkcsv(origin1_testing, '1', csv_testing)
     mkcsv(origin2_testing, '2', csv_testing)
+=======
+    with open(csv_name, 'w', newline='') as csvfile:
+        g = os.walk(origin)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        for path, dir_list, file_list in g:
+            for file_name in file_list:
+                
+
+if __name__ == "__main__":
+    origin0 = "./data/gesture0/gray"
+    origin1 = "./data/gesture1/gray"
+    origin2 = "./data/gesture2/gray"
+    destination = "./data/all"
+    csv_filename = "./data/label.csv"
+    cpdata(origin0, destination)
+    cpdata(origin1, destination)
+    cpdata(origin2, destination)
+>>>>>>> 2643d6ed20bda982d7c43a77c9d1bdeb43c982b2
